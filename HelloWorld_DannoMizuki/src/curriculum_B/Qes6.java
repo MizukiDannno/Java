@@ -9,20 +9,9 @@ import java.util.Set;
 public class Qes6 {
 
 	public static void main(String[] args) {
-
-		// 商品一覧表のタイトル
-		String title = ("\033[44m商品一覧\033[0m");
-
-		// 商品一覧表の品目
-		String items = ("\033[46mパソコン" + "\n" + "冷蔵庫"  + "\n" + "扇風機" + "\n" + "洗濯機" + "\n" + "加湿器" + "\n" + "テレビ" + "\n" + "ディスプレイ\033[0m" + "\n");
-
-		// タイトル出力
-		System.out.println(title);
-
-		// 品目出力
-		System.out.println(items);
-
-
+		
+		// 商品名を入力
+		System.out.println("商品名を入力してください");
 
 		// コンソールに文字を入力できるようにする
 		Scanner UserInput = new Scanner(System.in);
@@ -30,8 +19,9 @@ public class Qes6 {
 		// 乱数を扱えるようにする
 		Random random = new Random();
 
-		{		
 
+		// 入力を何度でも受け付ける
+		while(true) {	
 
 			// 入力された文字列を読み取る
 			String ProductName = UserInput.nextLine();
@@ -40,7 +30,7 @@ public class Qes6 {
 			String[] WordsArray = ProductName.split("、");
 
 			// 入力された単語の重複を削除
-			Set<String> Words = new HashSet<>(Arrays.asList(WordsArray));
+			Set<String> Products = new HashSet<>(Arrays.asList(WordsArray));
 
 
 			// 0～11の乱数を個数を表す変数に代入
@@ -54,10 +44,10 @@ public class Qes6 {
 
 
 			// 入力された商品を拡張for文で処理
-			for (String Word : Words) {
+			for (String Product : Products) {
 
 				// 商品の残数を条件に応じて分岐させる
-				int Quantity = switch (Word) {
+				int Quantity = switch (Product) {
 
 				// 0～11の乱数を個数に指定
 				case "パソコン", "冷蔵庫", "扇風機", "洗濯機", "加湿器" -> Quantity1;
@@ -77,10 +67,10 @@ public class Qes6 {
 				int number = (Quantity > -1) ? 1 : 2 ;
 
 				// 存在する商品の数の文章に割り当てられた変数
-				String Message1 = Word + "の残り台数は" + Quantity + "台です" + "\n";
+				String Message1 = Product + "の残り台数は" + Quantity + "台です" + "\n";
 
 				// 存在しない商品の数の文章に割り当てられた変数
-				String Message2 = "『" + Word + "』は指定の商品ではありません" + "\n";
+				String Message2 = "『" + Product + "』は指定の商品ではありません" + "\n";
 
 
 
@@ -92,25 +82,19 @@ public class Qes6 {
 
 					// メッセージを出力
 					System.out.println(Message1);
-					
-					// scannerを閉じる
-					UserInput.close();
 
 					// プログラム終了
 					break;
-
+					
 					// 存在しない商品存在の場合
 				case 2 :
 
 					// メッセージを出力
 					System.out.println(Message2);
-					
-					// scannerを閉じる
-					UserInput.close();
 
 					// プログラム終了
 					break;
-
+					
 				}
 
 			}
@@ -120,6 +104,4 @@ public class Qes6 {
 	}
 
 }
-
-
 
