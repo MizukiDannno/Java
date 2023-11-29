@@ -73,7 +73,6 @@ public class Qes6 {
 				String Message2 = "『" + Product + "』は指定の商品ではありません" + "\n";
 
 
-
 				// どちらのメッセージを表示させるか分岐
 				switch(number) {
 
