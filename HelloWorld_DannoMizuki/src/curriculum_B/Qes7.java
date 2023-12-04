@@ -25,7 +25,7 @@ public class Qes7 {
 		int N;
 
 		// コンソール入力を受け付ける
-		Scanner userInput = new Scanner(System.in);
+		Scanner UserInput = new Scanner(System.in);
 
 		// 繰り返しフラグ
 		boolean repeatProcess;
@@ -41,7 +41,7 @@ public class Qes7 {
 			do {
 
 				// 人数を表すint型の入力を受け取れるようにする
-				N = userInput.nextInt();
+				N = UserInput.nextInt();
 
 				// 2以下の数値が入力された場合
 				if (N < 2) {
@@ -70,7 +70,7 @@ public class Qes7 {
 					System.out.print("\n" + i + "人目の" + subject + "の点数を入力してください:");
 
 					// 点数の入力を受け付ける
-					ScoreArray[y][i - 1] = userInput.nextDouble();
+					ScoreArray[y][i - 1] = UserInput.nextDouble();
 
 				}
 
@@ -158,11 +158,15 @@ public class Qes7 {
 			System.out.print("\n" + "「continue」でもう一度実行します。：");
 
 			// continueと入力された際に繰り返し
-			repeatProcess = userInput.next().equals("continue");
+			repeatProcess = UserInput.next().equals("continue");
 
 			// 繰り返し
 		} while (repeatProcess);
 
+		
+		// scannerを閉じる
+		UserInput.close();
+		
 	}
 
 }
