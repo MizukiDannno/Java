@@ -81,6 +81,9 @@ public class Qes6 {
 
 					// メッセージを出力
 					System.out.println(Message1);
+					
+					// scannerを閉じる
+					UserInput.close();
 
 					// プログラム終了
 					break;
@@ -90,6 +93,9 @@ public class Qes6 {
 
 					// メッセージを出力
 					System.out.println(Message2);
+					
+					// scannerを閉じる
+					UserInput.close();
 
 					// プログラム終了
 					break;
