@@ -45,7 +45,7 @@ public class Curriculum_New_1_18{
 	// Q4：Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力してください。
 
 	// 引数に少数二つを指定しオーバーロード
-	public static void Q4(double num1, double num2){
+	public static void Q2(double num1, double num2){
 
 		// 引数同士を和算
 		double result = (num1 + num2);
@@ -136,7 +136,7 @@ public class Curriculum_New_1_18{
 		Q3(intArray);
 
 		// Q4(小数二つを渡す)
-		Q4(2.2, 3.3);
+		Q2(2.2, 3.3);
 
 		// Q5(乱数が格納された整数の配列)
 		int[] RandomNumbers = Q5(5);
