@@ -17,7 +17,8 @@ public class Lion {
 			throw new IllegalArgumentException("引数にnullが含まれています");
 		}
 
-		// フィールド変数
+
+		// 変数にthisを使う
 		this.animalName = animalName;
 		this.animalSize = animalSize;
 		this.animalSpeed = animalSpeed;
