@@ -18,7 +18,11 @@ public class Animal {
 	public static void main(String[] args) {
 		
         // Lionオブジェクトを作成
-        Lion lion = new Lion("ライオン", 2.1, 80);
+        Lion lion = new Lion();
+        
+        lion.setAnimalName("ライオン");
+        lion.setAnimalSize(2.1);
+        lion.setAnimalSpeed(80);
 
         // コンソールに出力
         System.out.println("動物名：" + lion.getAnimalName());
