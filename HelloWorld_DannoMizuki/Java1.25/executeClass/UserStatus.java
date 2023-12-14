@@ -30,9 +30,12 @@ public class UserStatus {
 
 	public static void main(String[] args) {
 
+		// 名前の変数を呼び出す
 		String userName = "名前";
+		// 
         User player = User.Character.generateRandomUser(userName);
 
+        // 出力
 		System.out.println("こんにちは「 " + player.getUserName() + " 」さん");
 		System.out.println("ステータス");
 		System.out.println("HP：" + player.getMP());

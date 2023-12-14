@@ -106,8 +106,10 @@ public class User {
 			super(userName, hp, mp, pow, agi, def);
 		}
 
+		// 静的メソッドにてランダムなステータスを生成
 		public static User generateRandomUser(String userName) {
 
+			// ランダムな数値を代入
 			Random rand = new Random();
 			int randomHP = rand.nextInt(999) + 1;
 			int randomMP = rand.nextInt(999) + 1;
@@ -115,6 +117,7 @@ public class User {
 			int randomAgi = rand.nextInt(999) + 1;
 			int randomDef = rand.nextInt(999) + 1;
 
+			// Userクラスのコンストラクタを呼び出す
 			return new User(userName, randomHP, randomMP, randomPow, randomAgi, randomDef);
 
 		}
