@@ -8,15 +8,6 @@ public class Lion {
 	public int animalSpeed;
 
 
-	// 戻り値無しでコンストラクタを定義
-	public Lion() {
-		// デフォルト値を設定
-		this.animalName = "Unknown";
-		this.animalSize = 0.0;
-		this.animalSpeed = 0;
-	}
-
-
 	// 動物名のゲッター
 	public String getAnimalName() {
 		return this.animalName;
