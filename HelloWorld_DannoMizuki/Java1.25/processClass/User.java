@@ -3,7 +3,6 @@ package processClass;
 
 import java.util.Random;
 
-// スーパークラス
 public class User {
 
 	// 変数を宣言
@@ -21,15 +20,14 @@ public class User {
 		if (userName == null) {
 			throw new IllegalArgumentException("引数にnullが含まれています");
 		}
-
-
-		// 変数を区別
-		this.userName = userName;
-		this.hp = hp;
-		this.mp = mp;
-		this.pow = pow;
-		this.agi = agi;
-		this.def = def;
+		
+        setUserName(userName);
+        setHP(hp);
+        setMP(mp);
+        setPow(pow);
+        setAgi(agi);
+        setDef(def);
+		
 	}
 
 
@@ -94,7 +92,7 @@ public class User {
 	}
 
 	// 防御力のセッター
-	public void setDef(int def){
+	public void setDef(int def) {
 		this.def = def;
 	}
 
