@@ -77,41 +77,71 @@ public class PrefectureList {
 
 		// コンソールから入力を受け取る
 		Scanner scanner = new Scanner(System.in);
+		
+		// 都道府県番号の選択を要求
 		System.out.print("番号を入力してください: ");
 		String inputNumbers = scanner.nextLine();
-		String[] inputArray = inputNumbers.split(",");
+		
+		// ソート順の選択を要求
+		System.out.print("昇順または降順を選択してください: ");
+		String sortOrder = scanner.nextLine();
 
 
 		// 選択された都道府県番号を格納
+		String[] inputArray = inputNumbers.split(",");
 		int[] selectedNumbers = new int[inputArray.length];
 		for (int i = 0; i < inputArray.length; i++) {
 			selectedNumbers[i] = Integer.parseInt(inputArray[i].trim());
 		}
 
 
-		// バブルソートで昇順にソート
-		for (int i = 0; i < selectedNumbers.length - 1; i++) {
-			// 未ソート箇所の末尾から比較を繰り返す
-			for (int j = 0; j < selectedNumbers.length - i - 1; j++) {
-				// 隣接する2つの要素を比較、前の要素が大きい場合は入れ替える
-				if (selectedNumbers[j] > selectedNumbers[j + 1]) {
-					// 入れ替え
-					int temp = selectedNumbers[j];
-					selectedNumbers[j] = selectedNumbers[j + 1];
-					selectedNumbers[j + 1] = temp;
-				}
-			}
+		// ソート順序の選択
+		if ("昇順".equalsIgnoreCase(sortOrder)) {
+			bubbleSortAscending(selectedNumbers, prefectures);
+		} else if ("降順".equalsIgnoreCase(sortOrder)) {
+			bubbleSortDescending(selectedNumbers, prefectures);
+		} else {
+			System.out.println("無効な順序です");
 		}
 
 
 		// 選択した都道府県の情報を表示
 		for (int selectedNumber : selectedNumbers) {
-			Prefecture selectedPrefecture = prefectures[selectedNumber];
-			displayPrefectureInfo(selectedPrefecture);
+			displayPrefectureInfo(prefectures[selectedNumber]);
 		}
 
 		// Scannerをクローズ
 		scanner.close();
+	}
+
+
+	// バブルソートで昇順にソート
+	private static void bubbleSortAscending(int[] numbers, Prefecture[] prefectures) {
+		for (int i = 0; i < numbers.length - 1; i++) {
+			for (int j = 0; j < numbers.length - i - 1; j++) {
+				if (numbers[j] > numbers[j + 1]) {
+					// 入れ替え
+					int temp = numbers[j];
+					numbers[j] = numbers[j + 1];
+					numbers[j + 1] = temp;
+				}
+			}
+		}
+	}
+
+
+	// バブルソートで降順にソート
+	private static void bubbleSortDescending(int[] numbers, Prefecture[] prefectures) {
+		for (int i = 0; i < numbers.length - 1; i++) {
+			for (int j = 0; j < numbers.length - i - 1; j++) {
+				if (numbers[j] < numbers[j + 1]) {
+					// 入れ替え
+					int temp = numbers[j];
+					numbers[j] = numbers[j + 1];
+					numbers[j + 1] = temp;
+				}
+			}
+		}
 	}
 
 
