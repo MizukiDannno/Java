@@ -5,9 +5,9 @@ public class Person {
 	public String name;
 	public int age;
 	public double height;
+	// インスタンスフィールド「weight」を定義
 	public double weight;
-
-	// クラスフィールド「count」を定義
+	
 	public static int count = 0;
 
 	// コンストラクタを定義しインスタンスフィールドに値をセット
@@ -16,18 +16,19 @@ public class Person {
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
-
-		// 合計人数を表すクラスフィールドに1を足す
+		
 		count++;
 	}
 
 	// インスタンスメソッド「bmi」を定義
 	public double bmi() {
+		// インスタンスのBMIを返す
 		return this.weight / this.height / this.height;
 	}
 
 	// インスタンスメソッド「print」を定義
 	public void print() {
+		// thisを用いて出力
 		System.out.println("名前は" + this.name + "です");
 		System.out.println("年は" + this.age + "です");
 		System.out.println("BMIは" + this.bmi() + "です");
@@ -39,9 +40,5 @@ public class Person {
 		return count;
 	}
 	
-	// クラスメソッド「printCount」を定義
-	public static void printCount() {
-		System.out.println("合計" + Person.count() + "人です");
-		System.out.println("\n");
-	}
+
 }
