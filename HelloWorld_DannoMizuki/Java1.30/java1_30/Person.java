@@ -7,7 +7,7 @@ public class Person {
 	public double height;
 	// インスタンスフィールド「weight」を定義
 	public double weight;
-	
+
 	public static int count = 0;
 
 	// コンストラクタを定義しインスタンスフィールドに値をセット
@@ -16,7 +16,7 @@ public class Person {
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
-		
+
 		count++;
 	}
 
@@ -39,6 +39,6 @@ public class Person {
 	public static int count() {
 		return count;
 	}
-	
+
 
 }
